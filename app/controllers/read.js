@@ -1,6 +1,5 @@
 const moment = require('moment')
 const readgana = require('../middlewares/readgana')
-const url = require('url').parse
 const x = require('x-ray')({
     filters: {
         trim: (value) => {
@@ -15,21 +14,14 @@ const x = require('x-ray')({
     }
 })
 
-exports.readCone = (req, res) => {
-    let date = url(req.url, true).query
-    console.log('Date: ', date)
-
+exports.readCone = (req, res) => { 
     readgana.readConecta()
         .then( conecta => {
             res.json(conecta)
         })
-
 }
 
 exports.readLDom = async (req, res) => {
-    let date = url(req.url, true).query
-    console.log('Date: ', date)
-
     readgana.readLotDom()
         .then( lotDom => {
             res.json(lotDom)
@@ -37,9 +29,6 @@ exports.readLDom = async (req, res) => {
 }
 
 exports.readLoter = async (req, res) => {
-    let date = url(req.url, true).query
-    console.log('Date: ', date)
-
     readgana.readConecta()
         .then( conecta => {
             res.json(conecta)

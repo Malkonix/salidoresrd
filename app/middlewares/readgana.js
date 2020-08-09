@@ -57,7 +57,6 @@ exports.readLoteria = async () => {
             return response
         })
         .catch((err) => {
-            console.log(err) // handle error in promise
             return err
         })
 }
