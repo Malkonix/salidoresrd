@@ -1,8 +1,6 @@
 const moment = require('moment')
 const axios = require('axios')
 const path = require('path')
-// const phantom = require('phantom')
-// const phantom = require('x-ray-phantom')
 
 const x = require('x-ray')({
     filters: {
@@ -92,7 +90,7 @@ exports.readHaiti = async () => {
         .then((response) => {
             let data = response.data
             // console.log(data)
-            return x(data, 'div.jumbotron.summmary-results',
+            return x(data, 'div.jumbotron.summary-results',
                 x('div.container',
                     x('div.row',
                      x('div.col-md-6.col-sm-12.col-xs-12.text-center',
@@ -114,28 +112,3 @@ exports.readHaiti = async () => {
             return error
         })
 }
-
-// x('https://google.com/', 'title')(function(err, str) {
-//         if (err) return done(err);
-//         assert.equal('Google', str);
-//         done();
-//       })
-//     // ,
-//     //     {
-//     //         nombre: x('div.jumbotron', 'div.container', 'div.head-result')
-//     //     }
-//         // [{
-//         //     loteria: x('col-md-6 col-sm-12 col-xs-12 text-center', 'src|trim'),
-//         //     fecha: x('div.summary-results-block', 'label.src'),
-//         //     numeros: x('div.result', [
-//         //         'span.blue_dark'
-//         //     ])
-//         // }]
-//     // )
-//         .then((response) => {
-//             console.log('Haiti: ', response)
-//             return response
-//         })
-//         .catch(err => {
-//             throw err
-//         })

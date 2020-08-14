@@ -11,7 +11,6 @@ const Read = require('./app/middlewares/readgana')
 const app = express()
 const router = require('./app/routes')
 
-
 app.use(bodyParser.urlencoded({
     extended: false
 })); // Parses urlencoded bodies
@@ -38,5 +37,5 @@ app.get('/gps', (req, res) => {
 router(app)
 
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is listening on port ${port}`)
+    console.log('Server is listening on port ', port)
 })

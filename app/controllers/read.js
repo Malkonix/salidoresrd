@@ -1,18 +1,4 @@
-const moment = require('moment')
 const readgana = require('../middlewares/readgana')
-const x = require('x-ray')({
-    filters: {
-        trim: (value) => {
-            return typeof value === 'string' ? value.trim() : value
-        },
-        fecha: (value) => {
-            return typeof value === 'string' ? moment(value.trim(), "DD-MM-YYYY").local().format().toString() : value
-        },
-        fecha2: (value) => {
-            return typeof value === 'string' ? moment(value.trim(), "DD/MM/YYYY").local().format().toString() : value
-        }
-    }
-})
 
 exports.readCone = (req, res) => { 
     readgana.readConecta()
@@ -41,10 +27,3 @@ exports.readHaiti = async (req, res) => {
             res.json(haiti)
         })
 }
-
-// exports.readHaiti2 = async (req, res) => {
-//     readgana.readHaiti2()
-//         .then( haiti => {
-//             res.json(haiti)
-//         })
-// }
