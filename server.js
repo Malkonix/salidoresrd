@@ -2,6 +2,7 @@ const express = require('express')
 const moment = require('moment')
 const faker = require('faker')
 const bodyParser = require('body-parser')
+// const history = require('connect-history-api-fallback')
 const cors = require('cors')
 const logger = require('morgan')
 const port = 3000
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json()); // Send JSON responses
 app.use(logger('combined')); // Log requests to API using morgan
 app.use(cors());
+// app.use(history());
 
 app.get('/', (req, res) => res.json({ id: req.id, status: 'Working Api' }))
 

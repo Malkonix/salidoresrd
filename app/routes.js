@@ -10,6 +10,8 @@ module.exports = (app) => {
     readRoutes.get('/conecta', readController.readCone)
     readRoutes.get('/loterias', readController.readLoter)
     readRoutes.get('/lotdom', readController.readLDom)
+    readRoutes.get('/haiti', readController.readHaiti)
+    // readRoutes.get('/haiti2', readController.readHaiti2)
 
     app.use('/api', apiRoutes)
 }

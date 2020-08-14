@@ -8,14 +8,15 @@
   },
   "author": "Milton Lizardo",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "connect-history-api-fallback": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "moment": "^2.24.0",
-    "underscore": "^1.9.1",
+    "moment": "^2.27.0",
     "x-ray": "^2.3.4"
   },
   "devDependencies": {

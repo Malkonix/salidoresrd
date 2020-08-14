@@ -34,3 +34,17 @@ exports.readLoter = async (req, res) => {
             res.json(conecta)
         })
 }
+
+exports.readHaiti = async (req, res) => {
+    readgana.readHaiti()
+        .then( haiti => {
+            res.json(haiti)
+        })
+}
+
+// exports.readHaiti2 = async (req, res) => {
+//     readgana.readHaiti2()
+//         .then( haiti => {
+//             res.json(haiti)
+//         })
+// }
