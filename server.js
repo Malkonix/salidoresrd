@@ -2,7 +2,6 @@ const express = require('express')
 const moment = require('moment')
 const faker = require('faker')
 const bodyParser = require('body-parser')
-const history = require('connect-history-api-fallback')
 const cors = require('cors')
 // const Read = require('./app/middlewares/readgana')
 
@@ -15,15 +14,6 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
-
-if (process.env.NODE_ENV === "production") {
-    app.use(history());
-}
-
-if (process.env.NODE_ENV !== "production") {
-    const logger = require('morgan')
-    app.use(logger('combined')); // Log requests to API using morgan
-}
 
 app.get('/', (req, res) => res.json({
     // id: req.id,
