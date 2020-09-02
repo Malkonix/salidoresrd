@@ -17,17 +17,20 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
-app.use(history());
 
 if (process.env.NODE_ENV !== "production") {
     app.use(logger('combined')); // Log requests to API using morgan
+    // app.use(history());
 }
 
-app.get('/', (req, res) => res.json({ id: req.id, status: 'Working Api' }))
+app.get('/', (req, res) => res.json({
+    // id: req.id,
+    status: 'Working Api'
+}))
 
 app.get('/gps', (req, res) => {
     res.json({
-        id: req.id,
+        // id: req.id,
         sensor: faker.random.word(),
         time: moment(faker.date.recent(800)).local().format().toString(),
         data: [
