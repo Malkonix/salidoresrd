@@ -17,7 +17,11 @@ app.use(cors());
 
 app.get('/', (req, res) => res.json({
     // id: req.id,
-    status: 'Working Api'
+    status: 'Working Api',
+    "conectate.com.do": "/api/conecta",
+    "loteriasdominicanas.com": "/api/lotdom",
+    "loterias.do": "/api/loterias",
+    haiti: "/api/haiti"
 }))
 
 app.get('/gps', (req, res) => {
