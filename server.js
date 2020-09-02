@@ -2,7 +2,7 @@ const express = require('express')
 const moment = require('moment')
 const faker = require('faker')
 const bodyParser = require('body-parser')
-// const history = require('connect-history-api-fallback')
+const history = require('connect-history-api-fallback')
 const cors = require('cors')
 const logger = require('morgan')
 const port = 3000
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
-// app.use(history());
+app.use(history());
 
 if (process.env.NODE_ENV !== "production") {
     app.use(logger('combined')); // Log requests to API using morgan
