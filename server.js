@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('morgan')
 const port = 3000
-const Read = require('./app/middlewares/readgana')
+// const Read = require('./app/middlewares/readgana')
 
 const app = express()
 const router = require('./app/routes')
@@ -16,9 +16,12 @@ app.use(bodyParser.urlencoded({
 })); // Parses urlencoded bodies
 
 app.use(bodyParser.json()); // Send JSON responses
-app.use(logger('combined')); // Log requests to API using morgan
 app.use(cors());
 // app.use(history());
+
+if (process.env.NODE_ENV !== "production") {
+    app.use(logger('combined')); // Log requests to API using morgan
+}
 
 app.get('/', (req, res) => res.json({ id: req.id, status: 'Working Api' }))
 
