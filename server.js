@@ -4,7 +4,6 @@ const faker = require('faker')
 const bodyParser = require('body-parser')
 const history = require('connect-history-api-fallback')
 const cors = require('cors')
-const logger = require('morgan')
 const port = 3000
 // const Read = require('./app/middlewares/readgana')
 
@@ -19,6 +18,7 @@ app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
 
 if (process.env.NODE_ENV !== "production") {
+    const logger = require('morgan')
     app.use(logger('combined')); // Log requests to API using morgan
     // app.use(history());
 }
