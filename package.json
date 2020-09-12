@@ -1,5 +1,5 @@
 {
-  "name": "lotscrapp",
+  "name": "salidoresrd",
   "version": "0.1.0",
   "main": "server.js",
   "scripts": {
@@ -10,17 +10,20 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "body-parser": "^1.19.0",
-    "connect-history-api-fallback": "^1.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "faker": "^4.1.0",
+    "faker": "^5.1.0",
     "moment": "^2.27.0",
     "x-ray": "^2.3.4"
   },
   "devDependencies": {
-    "morgan": "^1.9.1",
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "^12.18.3",
+    "npm": "^6.14.6",
+    "yarn": "^1.22.4"
   }
 }
