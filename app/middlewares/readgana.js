@@ -73,7 +73,7 @@ exports.readLoteria = async () => {
 exports.readHaiti = async () => {
     return await axios({
         method: 'get',
-        url: 'https://www.leslycenter.com/',
+        url: 'https://www.leslycenter.com',
         headers: {
             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             "accept-language": "en-US,en;q=0.9,es-DO;q=0.8,es;q=0.7",
@@ -83,14 +83,14 @@ exports.readHaiti = async () => {
             "sec-fetch-site": "same-origin",
             "sec-fetch-user": "?1",
             "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36",
-            "upgrade-insecure-requests": "1",
+            "upgrade-insecure-requests": "1" ,
             "cookie": "lc_ci_session=e9ec073b923008b0a99d1382af416a2aec5c0037; chat-session=e5720390aa772f206275f1f0e95da285"
         }
     })
-        .then((response) => {
+        .then(async (response) => {
             let data = response.data
             // console.log(data)
-            return x(data, 'div.jumbotron.summary-results',
+            return await x(data, 'div.jumbotron.summary-results',
                 x('div.container',
                     x('div.row',
                      x('div.col-md-6.col-sm-12.col-xs-12.text-center',

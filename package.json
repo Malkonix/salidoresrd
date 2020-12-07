@@ -10,16 +10,17 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^5.1.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.1",
     "x-ray": "^2.3.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
   },
   "engines": {
     "node": "^12.18.3",

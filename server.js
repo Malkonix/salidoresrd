@@ -2,6 +2,7 @@ const express = require('express')
 const moment = require('moment')
 const faker = require('faker')
 const bodyParser = require('body-parser')
+const logger = require('morgan')
 const cors = require('cors')
 // const Read = require('./app/middlewares/readgana')
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
+app.use(logger('dev'))
 
 app.get('/', (req, res) => res.json({
     // id: req.id,
