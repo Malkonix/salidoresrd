@@ -15,7 +15,7 @@ const x = require('x-ray')({
 })
 
 // const url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
-const url = 'https://www.leslycenter.com/';
+const url = 'https://www.leslycenter.com';
 
 axios({
     method: 'get',
