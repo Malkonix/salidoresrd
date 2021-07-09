@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cors());
-app.use(logger('dev'))
+//app.use(logger('dev'))
 
 app.get('/', (req, res) => res.json({
     // id: req.id,
