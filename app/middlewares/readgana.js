@@ -28,7 +28,7 @@ exports.readConecta = async () => {
         numeros: x('div.game-scores', [
             'span.score|trim'
         ]),
-        fecha: 'span.session-date|fecha'
+        fecha: 'span.session-date|trim'
     }])
         .then((response) => {
             return response
@@ -44,7 +44,7 @@ exports.readLotDom = async () => {
         numeros: x('div.game-scores', [
             'span.score|trim'
         ]),
-        fecha: 'span.session-date|fecha'
+        fecha: 'span.session-date|trim'
     }])
         .then((response) => {
             return response
@@ -76,7 +76,7 @@ exports.readHaiti = async () => {
         url: 'https://www.leslycenter.com',
         headers: {
             "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-            "accept-language": "en-US,en;q=0.9,es-DO;q=0.8,es;q=0.7",
+            "accept-language": "en-US,en",
             "cache-control": "max-age=0",
             "sec-fetch-dest": "document",
             "sec-fetch-mode": "navigate",
@@ -89,14 +89,14 @@ exports.readHaiti = async () => {
     })
         .then(async (response) => {
             let data = response.data
-            // console.log(data)
+            //console.log(data)
             return await x(data, 'div.jumbotron.summary-results',
                 x('div.container',
                     x('div.row',
                      x('div.col-md-6.col-sm-12.col-xs-12.text-center',
                         [{
                             lotery: x('img.loto@src|bname'),
-                            date: x('div.summary-results-block', 'label.date|fecha3'),
+                            date: x('div.summary-results-block', 'label.date|trim'),
                             nums: x('div.result', ['span.blue_dark'])
                         }]
                     ))
