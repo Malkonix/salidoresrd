@@ -28,7 +28,7 @@ exports.readConecta = async () => {
         numeros: x('div.game-scores', [
             'span.score|trim'
         ]),
-        fecha: 'span.session-date|trim'
+        fecha: x('div.game-info', 'span.session-date|trim')
     }])
         .then((response) => {
             return response
@@ -44,7 +44,7 @@ exports.readLotDom = async () => {
         numeros: x('div.game-scores', [
             'span.score|trim'
         ]),
-        fecha: 'span.session-date|trim'
+        fecha: x('div.session-date|trim'),
     }])
         .then((response) => {
             return response
